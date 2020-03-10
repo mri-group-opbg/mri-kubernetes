@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-mdt
+spec:
+  containers:
+  - name: test-mdt
+    image: mrigroupopbg/mri-mdt:latest
+    command: ["mdt-list-devices"]
+    resources:
+      limits:
+        nvidia.com/gpu: 1
+  restartPolicy: Never
